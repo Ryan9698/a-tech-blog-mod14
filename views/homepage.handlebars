@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>Welcome to the Blog</h1>
+    
+    {{#if blogPosts}}
+        <div class="blog-posts">
+            {{#each blogPosts}}
+                <div class="blog-post">
+                    <h2>{{title}}</h2>
+                    <p>{{content}}</p>
+                    <p>Author: {{author}}</p>
+                    
+                    {{#if comments}}
+                        <h3>Comments:</h3>
+                        <ul>
+                            {{#each comments}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    {{/if}}
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <p>No blog posts available.</p>
+    {{/if}}
+    
+    <hr>
+    <!-- Login Form -->
+    <form action="/login" method="POST">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+    
+    <!-- Logout Button -->
+    <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
