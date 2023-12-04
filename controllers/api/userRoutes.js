@@ -1,5 +1,15 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const BlogPost = require('../../models/blogPost.js');
+
+router.get('/', async (req, res) => {
+    try {
+      const blogPosts = await BlogPost.findAll();
+        res.render('homepage', { blogPosts });
+    } catch (error) {
+      console.error('Error fetching blog posts:', error);
+    }
+  });
 
 router.post('/login', async (req, res) => {
   try {
