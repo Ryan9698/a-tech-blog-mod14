@@ -11,9 +11,9 @@
         <div class="blog-posts">
             {{#each blogPosts}}
                 <div class="blog-post">
-                    <h2>{{title}}</h2>
-                    <p>{{content}}</p>
-                    <p>Author: {{author}}</p>
+                    <h2>{{this.title}}</h2>
+                    <p>{{this.content}}</p>
+                    <p>Author: {{this.author}}</p>
                     
                     {{#if comments}}
                         <h3>Comments:</h3>
@@ -30,7 +30,6 @@
         <p>No blog posts available.</p>
     {{/if}}
     
-    <hr>
     <!-- Login Form -->
     <form action="/login" method="POST">
         <input type="email" name="email" placeholder="Email">
