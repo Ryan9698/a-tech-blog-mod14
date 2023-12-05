@@ -17,6 +17,10 @@ BlogPost.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    comments: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }
   },
   {
     sequelize,
