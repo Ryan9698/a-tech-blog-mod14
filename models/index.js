@@ -1,3 +1,9 @@
-const User = require('./User');
+const userRoute = require('./User');
+const blogPost = require('./blogPost');
+const comment = require('./comment');
 
-module.exports = { User };
+router.use('/user', userRoute);
+router.use('/blogPost', blogPost);
+router.use('/comment', comment);
+
+module.exports = router;
